@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -109,6 +110,8 @@ const DialogDescription = React.forwardRef<
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 
+const VisuallyHidden = VisuallyHiddenPrimitive.Root;
+
 export {
   Dialog,
   DialogPortal,
@@ -120,6 +123,5 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
-  VisuallyHiddenPrimitive as VisuallyHidden,
+  VisuallyHidden,
 }
-
