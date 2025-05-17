@@ -1,3 +1,4 @@
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
@@ -21,6 +22,7 @@ export const siteConfig = {
     twitter: "https://twitter.com/example",
     github: "https://github.com/example",
     linkedin: "https://linkedin.com/in/example",
+    instagram: "https://instagram.com/example", // Added Instagram
   },
   contact: {
     email: "contact@zano.example.com", // Placeholder

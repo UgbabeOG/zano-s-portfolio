@@ -1,10 +1,11 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { ContactForm } from "./contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Film, AtSign, Phone, MapPin, Twitter, Github, Linkedin } from "lucide-react";
+import { Film, AtSign, Phone, MapPin, Twitter, Github, Linkedin, Instagram } from "lucide-react"; // Added Instagram
 
 export const metadata = {
   title: "About & Contact",
@@ -24,7 +25,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <div className="grid md:grid-cols-3 gap-12 items-start"> {/* Changed to grid layout for better spacing */}
+      <div className="grid md:grid-cols-3 gap-12 items-start">
         {/* Bio Section */}
         <section className="md:col-span-2 space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
           <Card className="shadow-lg">
@@ -33,7 +34,7 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent className="space-y-4 text-foreground/90">
               <Image
-                src="https://placehold.co/800x450.png" // Placeholder for director's image or related imagery
+                src="https://placehold.co/800x450.png"
                 alt={`Image related to ${siteConfig.name}`}
                 width={800}
                 height={450}
@@ -103,6 +104,11 @@ export default function AboutPage() {
                   <Button variant="outline" size="icon" asChild>
                     <Link href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                       <Linkedin className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="icon" asChild>
+                    <Link href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <Instagram className="h-5 w-5" />
                     </Link>
                   </Button>
                 </div>
