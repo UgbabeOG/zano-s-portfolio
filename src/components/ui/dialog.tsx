@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
+import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
 import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -119,4 +120,6 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
+  VisuallyHiddenPrimitive as VisuallyHidden,
 }
+
