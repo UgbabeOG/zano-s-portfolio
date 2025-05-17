@@ -10,14 +10,16 @@ import { VisuallyHidden } from "@/components/ui/dialog"; // VisuallyHidden is ex
 import { ThemeToggle } from "@/components/theme-toggle";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useState } from "react"; // Import useState
 
 export function Navbar() {
   const pathname = usePathname();
+  const [isSheetOpen, setIsSheetOpen] = useState(false); // State for sheet open/close
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2" aria-label={siteConfig.name}>
+        <Link href="/" className="flex items-center space-x-2" aria-label={siteConfig.name} onClick={() => setIsSheetOpen(false)}>
           <Film className="h-6 w-6 text-primary" />
           <span className="font-bold sm:inline-block text-lg">
             {siteConfig.name}
@@ -41,7 +43,7 @@ export function Navbar() {
 
         <div className="flex items-center space-x-2">
           <ThemeToggle />
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-5 w-5" />
@@ -61,6 +63,7 @@ export function Navbar() {
                       "text-lg transition-colors hover:text-primary",
                        pathname === item.href ? "text-primary" : "text-foreground"
                     )}
+                    onClick={() => setIsSheetOpen(false)} // Close sheet on link click
                   >
                     {item.label}
                   </Link>
