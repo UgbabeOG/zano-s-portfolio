@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { ContactForm } from "./contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Film, AtSign, Phone, MapPin, Twitter, Github, Linkedin, Instagram } from "lucide-react"; // Added Instagram
+import { Film, AtSign, Phone, MapPin, Twitter, Github, MessageSquare, Instagram } from "lucide-react"; // Changed Linkedin to MessageSquare
 
 export const metadata = {
   title: "About & Contact",
@@ -102,8 +102,8 @@ export default function AboutPage() {
                     </Link>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
-                    <Link href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                      <Linkedin className="h-5 w-5" />
+                    <Link href={siteConfig.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                      <MessageSquare className="h-5 w-5" />
                     </Link>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
