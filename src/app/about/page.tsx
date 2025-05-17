@@ -1,8 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { ContactForm } from "./contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Film } from "lucide-react";export const metadata = {
+import { Button } from "@/components/ui/button";
+import { Film, AtSign, Phone, MapPin, Twitter, Github, Linkedin } from "lucide-react";
+
+export const metadata = {
   title: "About & Contact",
   description: `Learn more about ${siteConfig.name}, their work, and how to get in touch.`,
 };
@@ -20,7 +24,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <div className="flex justify-center animate-in fade-in slide-in-from-left-10 duration-700">
+      <div className="grid md:grid-cols-3 gap-12 items-start"> {/* Changed to grid layout for better spacing */}
         {/* Bio Section */}
         <section className="md:col-span-2 space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
           <Card className="shadow-lg">
