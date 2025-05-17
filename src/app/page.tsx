@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -20,16 +21,16 @@ export default function HomePage() {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             {siteConfig.name}
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             {siteConfig.description} Discover a unique vision in filmmaking and photography.
           </p>
-          <div className="space-x-4">
-            <Button size="lg" asChild className="shadow-lg hover:shadow-primary/30 transition-shadow">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 sm:gap-0 sm:space-x-4">
+            <Button size="lg" asChild className="shadow-lg hover:shadow-primary/30 transition-shadow w-full sm:w-auto">
               <Link href="/gallery">
                 View Gallery <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="shadow-lg hover:shadow-accent/30 transition-shadow">
+            <Button size="lg" variant="outline" asChild className="shadow-lg hover:shadow-accent/30 transition-shadow w-full sm:w-auto">
               <Link href="/about">
                 About Zano <Sparkles className="ml-2 h-5 w-5 text-accent" />
               </Link>

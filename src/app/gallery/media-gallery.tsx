@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -32,8 +33,8 @@ export function MediaGallery({ items, categories, onOpenAiTagger }: MediaGallery
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-card rounded-lg shadow">
-        <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between p-4 bg-card rounded-lg shadow">
+        <div className="w-full md:w-auto flex flex-wrap gap-2 justify-center md:justify-start">
           {categories.map((category) => (
             <Button
               key={category.id}
@@ -45,11 +46,10 @@ export function MediaGallery({ items, categories, onOpenAiTagger }: MediaGallery
               {category.name}
             </Button>
           ))}
-        </Button>
-        <Button onClick={onOpenAiTagger} variant="secondary" className="shadow hover:shadow-md">
+        </div>
+        <Button onClick={onOpenAiTagger} variant="secondary" className="shadow hover:shadow-md w-full md:w-auto">
           Suggest Tags with AI
         </Button>
-        </div>
         <div className="relative w-full md:w-1/3">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input

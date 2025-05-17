@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -84,40 +85,34 @@ export function AiTagSuggester({ isOpen, onOpenChange }: AiTagSuggesterProps) {
             Provide media details to get AI-powered tag suggestions. For demo purposes, you can use the example data URI.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="description" className="text-right">
-              Description
-            </Label>
+        <div className="space-y-6 py-4">
+          <div>
+            <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="col-span-3"
+              className="mt-1 w-full"
               placeholder="Optional: e.g., 'Sunset over mountains'"
             />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="mediaDataUri" className="text-right">
-              Media Data URI
-            </Label>
+          <div>
+            <Label htmlFor="mediaDataUri">Media Data URI</Label>
             <Input
               id="mediaDataUri"
               value={mediaDataUri}
               onChange={(e) => setMediaDataUri(e.target.value)}
-              className="col-span-3"
+              className="mt-1 w-full"
               placeholder="data:image/png;base64,..."
             />
           </div>
-           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="mediaType" className="text-right">
-              Media Type
-            </Label>
+           <div>
+            <Label htmlFor="mediaType">Media Type</Label>
             <select
               id="mediaType"
               value={mediaType}
               onChange={(e) => setMediaType(e.target.value as "image" | "video")}
-              className="col-span-3 block w-full rounded-md border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring"
+              className="mt-1 block w-full rounded-md border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring"
             >
               <option value="image">Image</option>
               <option value="video">Video</option>
@@ -125,7 +120,7 @@ export function AiTagSuggester({ isOpen, onOpenChange }: AiTagSuggesterProps) {
           </div>
 
           {suggestedTags.length > 0 && (
-            <div className="col-span-4 mt-4">
+            <div className="pt-2">
               <Label>Suggested Tags:</Label>
               <div className="flex flex-wrap gap-2 mt-2 p-3 border rounded-md bg-muted/50">
                 {suggestedTags.map((tag, index) => (
