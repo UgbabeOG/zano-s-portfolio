@@ -1,0 +1,96 @@
+import type { MediaItem, Category } from "@/types";
+import { Image as ImageIcon, Video as VideoIcon, Briefcase as BriefcaseIcon, Mountain, Users } from "lucide-react";
+
+export const categories: Category[] = [
+  { id: "all", name: "All" },
+  { id: "portrait", name: "Portrait", icon: Users },
+  { id: "landscape", name: "Landscape", icon: Mountain },
+  { id: "commercial", name: "Commercial", icon: BriefcaseIcon },
+  { id: "short-film", name: "Short Film", icon: VideoIcon },
+];
+
+export const mediaItems: MediaItem[] = [
+  {
+    id: "1",
+    type: "image",
+    src: "https://placehold.co/600x400.png",
+    title: "Urban Elegance",
+    description: "A striking portrait capturing modern city life.",
+    category: "portrait",
+    tags: ["urban", "fashion", "cityscape", "modern", "style"],
+    dataAiHint: "urban fashion",
+  },
+  {
+    id: "2",
+    type: "video",
+    src: "https://placehold.co/600x400.png", // Placeholder, ideally a video link
+    thumbnailSrc: "https://placehold.co/600x400.png",
+    title: "Mountain Majesty",
+    description: "Breathtaking drone footage of a serene mountain range.",
+    category: "landscape",
+    tags: ["nature", "drone", "mountains", "serene", "adventure"],
+    dataAiHint: "mountain landscape",
+  },
+  {
+    id: "3",
+    type: "image",
+    src: "https://placehold.co/600x300.png",
+    title: "Product Showcase",
+    description: "Clean and crisp commercial shot for a luxury brand.",
+    category: "commercial",
+    tags: ["product", "luxury", "branding", "minimalist", "studio"],
+    dataAiHint: "luxury product",
+  },
+  {
+    id: "4",
+    type: "video",
+    src: "https://placehold.co/600x400.png",
+    thumbnailSrc: "https://placehold.co/600x400.png",
+    title: "The Last Stand",
+    description: "A compelling short film about courage and resilience.",
+    category: "short-film",
+    tags: ["narrative", "drama", "cinematic", "storytelling", "independent"],
+    dataAiHint: "film still",
+  },
+  {
+    id: "5",
+    type: "image",
+    src: "https://placehold.co/400x600.png",
+    title: "Candid Moments",
+    description: "A heartfelt portrait capturing genuine emotion.",
+    category: "portrait",
+    tags: ["candid", "emotion", "lifestyle", "natural", "people"],
+    dataAiHint: "candid portrait",
+  },
+  {
+    id: "6",
+    type: "image",
+    src: "https://placehold.co/800x400.png",
+    title: "Coastal Dreams",
+    description: "Panoramic view of a stunning coastline at sunset.",
+    category: "landscape",
+    tags: ["coastal", "sunset", "ocean", "travel", "scenic"],
+    dataAiHint: "coastal sunset",
+  },
+   {
+    id: "7",
+    type: "image",
+    src: "https://placehold.co/600x600.png",
+    title: "Architectural Lines",
+    description: "A study of modern architecture and geometric patterns.",
+    category: "commercial",
+    tags: ["architecture", "modern", "geometric", "design", "urban"],
+    dataAiHint: "modern architecture",
+  },
+  {
+    id: "8",
+    type: "video",
+    src: "https://placehold.co/600x338.png", // 16:9 aspect ratio
+    thumbnailSrc: "https://placehold.co/600x338.png",
+    title: "City Rhythms",
+    description: "A dynamic look at the bustling life of a metropolis.",
+    category: "short-film",
+    tags: ["city life", "time-lapse", "urban", "dynamic", "culture"],
+    dataAiHint: "city timelapse",
+  },
+];
