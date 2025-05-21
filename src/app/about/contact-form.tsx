@@ -70,7 +70,6 @@ export function ContactForm() {
     <Form {...form}>
       <form
         action={formAction}
-        onSubmit={form.handleSubmit(() => formAction(new FormData(form.control._fields._formRef?.current)))} // Pass FormData on submit
         className="space-y-6 p-6 border rounded-lg shadow-lg bg-card"
       >
         <FormField
