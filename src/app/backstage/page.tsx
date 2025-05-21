@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
-import { MediaGallery } from '@/app/gallery/media-gallery';
-import { allBackstageMedia } from '@/data/media'; // Assuming you have backstage media data here
+import { Metadata } from "next";
+import { MediaGallery } from "@/app/gallery/media-gallery";
+import { mediaItems, categories } from "@/data/media"; // Use main mediaItems for now
 
 export const metadata: Metadata = {
-  title: 'Backstage',
-  description: 'A collection of backstage videos and pictures.',
+  title: "Backstage",
+  description: "A collection of backstage videos and pictures.",
 };
 
 export default function BackstagePage() {
@@ -15,10 +15,15 @@ export default function BackstagePage() {
           Backstage
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
-          Take a look behind the scenes with these backstage videos and pictures.
+          Take a look behind the scenes with these backstage videos and
+          pictures.
         </p>
       </div>
-      <MediaGallery mediaItems={allBackstageMedia} />
+      <MediaGallery
+        items={mediaItems}
+        categories={categories}
+        onOpenAiTagger={() => {}}
+      />
     </section>
   );
 }
