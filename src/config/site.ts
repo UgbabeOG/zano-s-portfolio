@@ -20,7 +20,6 @@ export const siteConfig = {
   ],
   socialLinks: {
     twitter: "https://twitter.com/example",
-    github: "https://github.com/example",
     whatsapp: "https://wa.me/12345678900", // Placeholder - Update with your WhatsApp link
     instagram: "https://instagram.com/example",
   },

@@ -1,11 +1,15 @@
-
 "use client";
 
 import Link from "next/link";
 import { Menu, Film } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { VisuallyHidden } from "@/components/ui/dialog"; // VisuallyHidden is exported from dialog.tsx
 import { ThemeToggle } from "@/components/theme-toggle";
 import { usePathname } from "next/navigation";
@@ -18,14 +22,19 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2" aria-label={siteConfig.name} onClick={() => setIsSheetOpen(false)}>
+      <div className="w-full flex h-16 items-center justify-between px-4">
+        <Link
+          href="/"
+          className="flex items-center space-x-2"
+          aria-label={siteConfig.name}
+          onClick={() => setIsSheetOpen(false)}
+        >
           <Film className="h-6 w-6 text-primary" />
           <span className="font-bold sm:inline-block text-lg">
             {siteConfig.name}
           </span>
         </Link>
-        
+
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {siteConfig.navItems.map((item) => (
             <Link
@@ -61,7 +70,9 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       "text-lg transition-colors hover:text-primary",
-                       pathname === item.href ? "text-primary" : "text-foreground"
+                      pathname === item.href
+                        ? "text-primary"
+                        : "text-foreground"
                     )}
                     onClick={() => setIsSheetOpen(false)} // Close sheet on link click
                   >

@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { ContactForm } from "./contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Film, AtSign, Phone, MapPin, Twitter, Github, MessageSquare, Instagram } from "lucide-react"; // Changed Linkedin to MessageSquare
+import { Film, AtSign, Phone, MapPin, Twitter,  MessageSquare, Instagram } from "lucide-react"; // Changed Linkedin to MessageSquare
 
 export const metadata = {
   title: "About & Contact",
@@ -89,18 +89,14 @@ export default function AboutPage() {
               </div>
               
               <div className="pt-4">
-                <h4 className="font-semibold mb-2">Follow Zano</h4>
+                <h4 className="font-semibold mb-2">Follow Director Zano</h4>
                 <div className="flex space-x-2">
                   <Button variant="outline" size="icon" asChild>
                     <Link href={siteConfig.socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                       <Twitter className="h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button variant="outline" size="icon" asChild>
-                    <Link href={siteConfig.socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                      <Github className="h-5 w-5" />
-                    </Link>
-                  </Button>
+                 
                   <Button variant="outline" size="icon" asChild>
                     <Link href={siteConfig.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                       <MessageSquare className="h-5 w-5" />

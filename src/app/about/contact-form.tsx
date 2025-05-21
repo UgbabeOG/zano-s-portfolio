@@ -117,7 +117,7 @@ export function ContactForm() {
           <p className="text-sm font-medium text-destructive">{state.message}</p>
         )}
 
-        <Button type="submit" className="w-full shadow-md hover:shadow-lg transition-shadow" disabled={form.formState.isSubmitting}>
+        <Button type="submit" className="w-full shadow-md hover:shadow-lg hover:bg-yellow-500 transition-shadow" disabled={form.formState.isSubmitting}>
           {form.formState.isSubmitting ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : (
