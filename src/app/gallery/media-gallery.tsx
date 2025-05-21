@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -15,19 +14,28 @@ interface MediaGalleryProps {
   onOpenAiTagger: () => void; // Callback to open AI tagger modal
 }
 
-export function MediaGallery({ items, categories, onOpenAiTagger }: MediaGalleryProps) {
+export function MediaGallery({
+  items,
+  categories,
+  onOpenAiTagger,
+}: MediaGalleryProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const filteredItems = useMemo(() => {
     return items
       .filter((item) =>
-        selectedCategory === "all" ? true : item.category.toLowerCase() === selectedCategory.toLowerCase()
+        selectedCategory === "all"
+          ? true
+          : item.category.toLowerCase() === selectedCategory.toLowerCase()
       )
-      .filter((item) =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      .filter(
+        (item) =>
+          item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.tags.some((tag) =>
+            tag.toLowerCase().includes(searchTerm.toLowerCase())
+          )
       );
   }, [items, selectedCategory, searchTerm]);
 
@@ -47,7 +55,11 @@ export function MediaGallery({ items, categories, onOpenAiTagger }: MediaGallery
             </Button>
           ))}
         </div>
-        <Button onClick={onOpenAiTagger} variant="secondary" className="shadow hover:shadow-md w-full md:w-auto">
+        <Button
+          onClick={onOpenAiTagger}
+          variant="secondary"
+          className="shadow hover:shadow-md w-full md:w-auto"
+        >
           Suggest Tags with AI
         </Button>
         <div className="relative w-full md:w-1/3">
@@ -60,9 +72,9 @@ export function MediaGallery({ items, categories, onOpenAiTagger }: MediaGallery
             className="pl-10"
           />
           {searchTerm && (
-            <Button 
-              variant="ghost" 
-              size="icon" 
+            <Button
+              variant="ghost"
+              size="icon"
               className="absolute right-2 top-1/2 -translate-y-1/2 h-7 w-7"
               onClick={() => setSearchTerm("")}
             >
@@ -87,16 +99,25 @@ export function MediaGallery({ items, categories, onOpenAiTagger }: MediaGallery
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
-                <MediaCard item={item} onViewDetails={() => { /* Implement detail view if needed */}} />
+                <MediaCard
+                  item={item}
+                  onViewDetails={() => {
+                    /* Implement detail view if needed */
+                  }}
+                />
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
       ) : (
         <div className="text-center py-12">
-          <p className="text-xl text-muted-foreground">No media items match your criteria.</p>
+          <p className="text-xl text-muted-foreground">
+            No media items match your criteria.
+          </p>
         </div>
       )}
     </div>
   );
 }
+
+// Example usage removed or move this to a page/component where mediaItems and categories are defined
