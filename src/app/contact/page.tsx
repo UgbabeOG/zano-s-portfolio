@@ -19,30 +19,32 @@ export default function ContactPage() {
             <p>
               <strong>Email:</strong>{" "}
               <a
-                href={`mailto:${siteConfig.email}`}
+                href={`mailto:${siteConfig.contact.email}`}
                 className="text-blue-600 hover:underline"
               >
-                {siteConfig.email}
+                {siteConfig.contact.email}
               </a>
             </p>
             <p>
-              <strong>Phone:</strong> {siteConfig.phone}
+              <strong>Phone:</strong> {/* Add phone if available */}
+              {/* {siteConfig.contact.phone} */}
             </p>
             <p>
-              <strong>Location:</strong> {siteConfig.location}
+              <strong>Location:</strong> {/* Add location if available */}
+              {/* {siteConfig.contact.location} */}
             </p>
             <div>
               <strong>Social Media:</strong>
               <ul className="mt-2 flex space-x-4">
-                {siteConfig.socialLinks.map((link, index) => (
-                  <li key={index}>
+                {Object.entries(siteConfig.socialLinks).map(([name, url]) => (
+                  <li key={name}>
                     <a
-                      href={link.url}
+                      href={url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:underline"
                     >
-                      {link.name}
+                      {name.charAt(0).toUpperCase() + name.slice(1)}
                     </a>
                   </li>
                 ))}
