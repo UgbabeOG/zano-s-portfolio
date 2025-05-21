@@ -37,16 +37,21 @@ export function Navbar() {
 
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {siteConfig.navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "transition-colors hover:text-primary",
-                pathname === item.href ? "text-primary" : "text-foreground/60"
-              )}
-            >
-              {item.label}
-            </Link>
+            item.href && ( // Ensure item.href exists
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex items-center text-foreground hover:text-accent-foreground hover:bg-accent transition-colors p-3 rounded-md text-base",
+                  pathname === item.href
+                    ? "text-primary font-medium"
+                    : "text-foreground/70 hover:text-foreground"
+                )}
+              >
+                {item.icon && <item.icon className="mr-2 h-4 w-4" />}
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -65,19 +70,22 @@ export function Navbar() {
               </VisuallyHidden>
               <nav className="flex flex-col space-y-4 mt-8">
                 {siteConfig.navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "text-lg transition-colors hover:text-primary",
-                      pathname === item.href
-                        ? "text-primary"
-                        : "text-foreground"
-                    )}
-                    onClick={() => setIsSheetOpen(false)} // Close sheet on link click
-                  >
-                    {item.label}
-                  </Link>
+                  item.href && ( // Ensure item.href exists
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={cn(
+                        "flex items-center p-3 rounded-md text-foreground hover:bg-accent hover:text-accent-foreground transition-colors text-base",
+                        pathname === item.href
+                          ? "text-primary font-medium"
+                          : "text-foreground"
+                      )}
+                      onClick={() => setIsSheetOpen(false)} // Close sheet on link click
+                    >
+                      {item.icon && <item.icon className="mr-3 h-5 w-5" />}
+                      {item.label}
+                    </Link>
+                  )
                 ))}
               </nav>
             </SheetContent>
