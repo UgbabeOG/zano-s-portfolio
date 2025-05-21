@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { ContactForm } from "./contact-form";
+import { ContactForm } from "../about/contact-form";
 
 export default function ContactPage() {
   return (
