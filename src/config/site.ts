@@ -51,7 +51,7 @@ export const siteConfig = {
     instagram: "https://instagram.com/example",
   },
   contact: {
-    email: "contact@zano.example.com", // Placeholder
+    email: "contact@UglyDirectorZano@gmail.com", // Placeholder
     // For contact form submissions, this email is not directly used by the form action in this scaffold.
     // The form action will log to console. For a real app, you'd use a service like Resend, SendGrid, etc.
   },

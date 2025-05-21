@@ -77,7 +77,7 @@ export default function AboutPage() {
                 <Phone className="h-5 w-5 text-primary mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-muted-foreground">(123) 456-7890 (Placeholder)</p>
+                  <p className="text-muted-foreground">(123) 456-7890 </p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
