@@ -1,29 +1,22 @@
 import { Metadata } from "next";
-import { MediaGallery } from "@/app/gallery/media-gallery";
 import { mediaItems, categories } from "@/data/media"; // Use main mediaItems for now
+import BackstageClientContent from "./backstage-client-content";
 
+// This file remains a Server Component to export metadata
 export const metadata: Metadata = {
   title: "Backstage",
   description: "A collection of backstage videos and pictures.",
 };
 
 export default function BackstagePage() {
+  const backstageItems = mediaItems.filter(
+    (item) => item.category === "backstage"
+  );
+
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Backstage
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Take a look behind the scenes with these backstage videos and
-          pictures.
-        </p>
-      </div>
-      <MediaGallery
-        items={mediaItems}
-        categories={categories}
-        onOpenAiTagger={() => {}}
-      />
-    </section>
+    <BackstageClientContent
+      items={backstageItems}
+      categories={categories}
+    />
   );
 }

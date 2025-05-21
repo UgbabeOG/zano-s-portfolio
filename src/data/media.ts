@@ -1,5 +1,11 @@
 import type { MediaItem, Category } from "@/types";
-import { Image as ImageIcon, Video as VideoIcon, Briefcase as BriefcaseIcon, Mountain, Users } from "lucide-react";
+import {
+  Image as ImageIcon,
+  Video as VideoIcon,
+  Briefcase as BriefcaseIcon,
+  Mountain,
+  Users,
+} from "lucide-react";
 
 export const categories: Category[] = [
   { id: "all", name: "All" },
@@ -7,6 +13,7 @@ export const categories: Category[] = [
   { id: "landscape", name: "Landscape", icon: Mountain },
   { id: "commercial", name: "Commercial", icon: BriefcaseIcon },
   { id: "short-film", name: "Short Film", icon: VideoIcon },
+  { id: "backstage", name: "Backstage", icon: VideoIcon }, // Added backstage category
 ];
 
 export const mediaItems: MediaItem[] = [
@@ -72,7 +79,7 @@ export const mediaItems: MediaItem[] = [
     tags: ["coastal", "sunset", "ocean", "travel", "scenic"],
     dataAiHint: "coastal sunset",
   },
-   {
+  {
     id: "7",
     type: "image",
     src: "https://placehold.co/600x600.png",
@@ -92,5 +99,26 @@ export const mediaItems: MediaItem[] = [
     category: "short-film",
     tags: ["city life", "time-lapse", "urban", "dynamic", "culture"],
     dataAiHint: "city timelapse",
+  },
+  {
+    id: "9",
+    type: "image",
+    src: "https://placehold.co/600x400.png",
+    title: "Behind the Scenes 1",
+    description: "A candid look at the crew setting up a shot.",
+    category: "backstage",
+    tags: ["crew", "setup", "behind the scenes", "production"],
+    dataAiHint: "backstage crew",
+  },
+  {
+    id: "10",
+    type: "video",
+    src: "https://placehold.co/600x400.png",
+    thumbnailSrc: "https://placehold.co/600x400.png",
+    title: "Director at Work",
+    description: "Footage of Zano directing a scene.",
+    category: "backstage",
+    tags: ["director", "action", "behind the scenes", "zano"],
+    dataAiHint: "director backstage",
   },
 ];
