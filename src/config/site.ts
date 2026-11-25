@@ -19,8 +19,8 @@ export const siteConfig = {
   name: "Ugliest Director Zano",
   description:
     "The official portfolio of Ugliest Director Zano, showcasing a curated gallery of photos and videos.",
-  url: "https://zano-s-portfolio.vercel.app/", // Replace with your actual URL
-  ogImage: "https://zano-s-portfolio.vercel.app/", // Replace with your OG image URL
+  url: "https://zano-s-portfolio.vercel.app/",
+  ogImage: "https://zano-s-portfolio.vercel.app/",
   navItems: [
     {
       label: "Home",
@@ -32,27 +32,25 @@ export const siteConfig = {
       href: "/gallery",
       icon: Image,
     },
-    // { label: "Backstage", href: "/backstage", icon: Video },
     {
-      label: "About ",
+      label: "About",
       href: "/about",
       icon: Info,
     },
     {
-      label: "Contact ",
-      href: "/about",
+      label: "Contact",
+      href: "/contact",
       icon: MessageSquare,
     },
   ] as NavItem[],
 
   socialLinks: {
-    twitter: "https://twitter.com/example",
-    whatsapp: "https://wa.me/12345678900", // Placeholder - Update with your WhatsApp link
-    instagram: "https://instagram.com/example",
+    instagramCinematic: "https://instagram.com/cinemagic",
+    instagramLifestyle: "https://instagram.com/uglydirectorzano",
+    whatsapp: "https://wa.me/2347010840838",
   },
   contact: {
-    email: "contact@UglyDirectorZano@gmail.com", // Placeholder
-    // For contact form submissions, this email is not directly used by the form action in this scaffold.
-    // The form action will log to console. For a real app, you'd use a service like Resend, SendGrid, etc.
+    email: "zano020896@gmail.com",
+    whatsapp: "07010840838",
   },
 };
